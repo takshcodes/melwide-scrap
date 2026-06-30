@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | MelWide Scrap</title>
+  <meta name="description" content="Contact MelWide Scrap in Craigieburn for scrap metal prices, pickups, skip bins, and cleanouts across Melbourne.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260630">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="MelWide Scrap home">
+        <img class="brand-logo" src="assets/melwide-truck-logo.png" alt="" width="904" height="483">
+        <span class="brand-name">MelWide Scrap</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="prices.html">Live Prices</a>
+        <a class="active" href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero contact-hero">
+      <div class="section-inner reveal">
+        <p class="eyebrow">Melbourne wide pickups</p>
+        <h1>Get in Touch</h1>
+        <p>Request a quote, confirm current rates, or arrange a pickup with our Craigieburn team.</p>
+        <p class="quote-disclaimer">For the fastest and most accurate quote, please send a photo of your scrap to [PHONE NUMBER] via SMS or WhatsApp. This helps us assess the material type, quantity and condition before we arrive.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner contact-layout">
+        <div class="contact-details reveal">
+          <article>
+            <h2>Contact details</h2>
+            <p><strong>Phone</strong> [PHONE NUMBER]</p>
+            <p><strong>Email</strong> [EMAIL ADDRESS]</p>
+            <p><strong>Yard</strong> [YARD ADDRESS, CRAIGIEBURN]</p>
+          </article>
+          <article>
+            <h2>Operating hours</h2>
+            <p><strong>Monday-Saturday</strong> 8:00am - 10:00pm</p>
+            <p><strong>Sunday</strong> By appointment only (available 24/7)</p>
+          </article>
+          <article>
+            <h2>Payment methods</h2>
+            <p>Cash &amp; EFT accepted.</p>
+          </article>
+        </div>
+
+        <div class="quote-options reveal">
+          <aside class="whatsapp-quote" aria-label="WhatsApp quote option">
+            <p class="eyebrow">Fastest response</p>
+            <h2>Send a photo direct</h2>
+            <p>Prefer to send a photo directly? Use WhatsApp for the fastest response.</p>
+            <a class="btn btn-secondary whatsapp-btn" href="https://wa.me/PHONE_NUMBER?text=Hi%20MelWide%20Scrap%2C%20I%27d%20like%20a%20quote%20for%20my%20scrap.%20Here%27s%20a%20photo%3A" target="_blank" rel="noopener">Get a Quote via WhatsApp</a>
+          </aside>
+
+          <form class="contact-form" action="#" method="post" enctype="multipart/form-data">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name">
+
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" placeholder="Your phone number">
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="Your email address">
+
+            <label for="scrap-category">What are you scrapping?</label>
+            <div class="custom-select" data-custom-select>
+              <input id="scrap-category" name="scrap-category" type="hidden" value="">
+              <button class="select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                <span>Select a category</span>
+              </button>
+              <div class="select-options" role="listbox" aria-label="What are you scrapping?">
+                <button type="button" role="option" data-value="non-ferrous">Non-Ferrous Metals (Copper, Brass, Aluminium, etc)</button>
+                <button type="button" role="option" data-value="auto-industrial">Auto &amp; Industrial (Scrap Cars, Car Parts, Catalytic Converters, Machinery, Truck Scrap)</button>
+                <button type="button" role="option" data-value="electronics-energy">Electronics &amp; Energy (E-Waste, Batteries, Solar Panels, Computers, Power Cables)</button>
+                <button type="button" role="option" data-value="other">Not Sure / Other</button>
+              </div>
+            </div>
+
+            <label for="scrap-photo">Upload photos of your scrap</label>
+            <div class="photo-upload" data-photo-upload>
+              <input id="scrap-photo" name="scrap-photos" type="file" accept="image/*" multiple>
+              <label class="photo-dropzone" for="scrap-photo">
+                <span>Add up to 10 photos</span>
+                <small>Drag images here or tap to choose. 25MB total limit.</small>
+              </label>
+              <div class="photo-upload-meta" aria-live="polite">
+                <span data-photo-count>0/10 photos selected</span>
+                <span data-photo-size>25MB remaining</span>
+              </div>
+              <p class="photo-upload-error" data-photo-error></p>
+              <div class="photo-list" data-photo-list></div>
+            </div>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us what scrap metal you have"></textarea>
+
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="map-section">
+      <div class="section-inner reveal">
+        <div class="map-shell">
+          <iframe
+            title="Craigieburn VIC map"
+            src="https://www.google.com/maps?q=Craigieburn%20VIC%203064&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="map-label">Craigieburn, VIC</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><div class="footer-logo">[LOGO]</div><p>Melbourne's scrap metal specialists.</p></div>
+      <div><h3>Pages</h3><a href="index.html">Home</a><a href="services.html">Services</a><a href="prices.html">Live Prices</a><a href="contact.html">Contact</a></div>
+      <div><h3>Hours</h3><p>Mon-Sat: 8:00am - 10:00pm</p><p>Sunday: By appointment</p></div>
+      <div><h3>Contact</h3><p>[PHONE NUMBER]</p><p>[EMAIL ADDRESS]</p></div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 MelWide Scrap. All rights reserved.</div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
