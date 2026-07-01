@@ -22,6 +22,7 @@ html {
 
 body {
   margin: 0;
+  padding-bottom: 48px; /* space for fixed bottom ticker */
   background:
     radial-gradient(circle at top left, rgba(18, 128, 47, 0.22), transparent 34rem),
     radial-gradient(circle at 85% 10%, rgba(189, 123, 66, 0.13), transparent 28rem),
@@ -152,35 +153,7 @@ p {
   background: rgba(189, 123, 66, 0.09);
 }
 
-.nav-toggle {
-  display: none;
-  width: 44px;
-  height: 44px;
-  border: 1px solid var(--line);
-  background: rgba(16, 18, 17, 0.88);
-  padding: 10px;
-  cursor: pointer;
-}
-
-.nav-toggle span {
-  display: block;
-  height: 2px;
-  margin: 5px 0;
-  background: var(--text);
-  transition: transform 180ms ease, opacity 180ms ease;
-}
-
-.nav-toggle.open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-.nav-toggle.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.nav-toggle.open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
+/* Hamburger removed — nav is always visible */
 
 .hero,
 .page-hero {
@@ -1070,6 +1043,8 @@ p {
 .site-footer {
   border-top: 1px solid var(--line);
   background: #070807;
+  /* Extra bottom padding for the fixed ticker bar */
+  padding-bottom: 48px;
 }
 
 .footer-inner {
@@ -1080,13 +1055,15 @@ p {
 }
 
 .footer-logo {
-  display: inline-grid;
-  place-items: center;
-  min-width: 110px;
-  min-height: 54px;
+  display: inline-block;
   margin-bottom: 16px;
-  color: var(--copper);
-  font-weight: 900;
+}
+
+.footer-logo-img {
+  width: auto;
+  height: 44px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.48));
 }
 
 .site-footer h3 {
@@ -1124,6 +1101,122 @@ p {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ==========================================
+   REVIEWS CAROUSEL
+   ========================================== */
+
+.reviews-section {
+  padding: 104px 0 80px;
+  overflow: hidden;
+}
+
+.reviews-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin-top: 48px;
+  /* Fade edges */
+  mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+
+.reviews-track {
+  display: flex;
+  gap: 22px;
+  width: max-content;
+  animation: reviews-scroll 36s linear infinite;
+}
+
+.reviews-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes reviews-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.review-card {
+  flex: 0 0 340px;
+  padding: 28px;
+  border: 1px solid rgba(189, 123, 66, 0.32);
+  background: linear-gradient(160deg, rgba(18, 128, 47, 0.06), rgba(189, 123, 66, 0.06)), rgba(16, 18, 17, 0.9);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03), 0 8px 32px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.review-stars {
+  color: var(--copper);
+  font-size: 1.22rem;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.review-card blockquote {
+  margin: 0;
+  color: rgba(240, 236, 228, 0.88);
+  font-size: 0.96rem;
+  line-height: 1.65;
+  font-style: italic;
+  flex: 1;
+}
+
+.review-card footer {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(189, 123, 66, 0.2);
+}
+
+.review-card footer strong {
+  color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.review-card footer span {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+/* ==========================================
+   FIXED BOTTOM METAL TICKER
+   ========================================== */
+
+.metal-ticker-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  background: linear-gradient(90deg, rgba(18, 128, 47, 0.22), rgba(189, 123, 66, 0.15)), rgba(10, 10, 10, 0.96);
+  backdrop-filter: blur(12px);
+}
+
+.metal-ticker-fixed .ticker-track {
+  /* Inherits animation from .ticker-track */
+}
+
+/* ==========================================
+   FEATURE CARD GLOW ANIMATION
+   ========================================== */
+
+@keyframes card-glow-on {
+  0%   { box-shadow: 0 0 0 0 transparent, inset 0 0 0 1px rgba(255, 255, 255, 0.025); border-color: rgba(240, 236, 228, 0.09); }
+  20%  { box-shadow: 0 0 55px 14px rgba(189, 123, 66, 0.55), 0 0 0 2px rgba(189, 123, 66, 0.85), inset 0 0 32px rgba(189, 123, 66, 0.18); border-color: rgba(189, 123, 66, 0.95); }
+  80%  { box-shadow: 0 0 55px 14px rgba(189, 123, 66, 0.55), 0 0 0 2px rgba(189, 123, 66, 0.85), inset 0 0 32px rgba(189, 123, 66, 0.18); border-color: rgba(189, 123, 66, 0.95); }
+  100% { box-shadow: 0 0 0 0 transparent, inset 0 0 0 1px rgba(255, 255, 255, 0.025); border-color: rgba(240, 236, 228, 0.09); }
+}
+
+.feature-card.glow-active {
+  animation: card-glow-on 2s ease-in-out forwards;
 }
 
 @media (max-width: 980px) {
@@ -1171,42 +1264,27 @@ p {
 
 @media (max-width: 720px) {
   .navbar {
-    min-height: 70px;
+    min-height: 62px;
+    gap: 10px;
   }
 
   .brand-name {
     display: none;
   }
 
-  .nav-toggle {
-    display: block;
-  }
-
+  /* Always-visible flat mobile nav — no hamburger, no dropdown */
   .nav-links {
-    position: absolute;
-    left: 16px;
-    right: 16px;
-    top: 78px;
-    display: grid;
-    gap: 8px;
-    padding: 12px;
-    border: 1px solid var(--line);
-    background: rgba(10, 10, 10, 0.96);
-    box-shadow: var(--shadow);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-8px);
-    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
-  }
-
-  .nav-links.open {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2px;
+    align-items: center;
   }
 
   .nav-links a {
-    padding: 14px;
+    padding: 8px 10px;
+    font-size: 0.78rem;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
   }
 
   .hero-grid {

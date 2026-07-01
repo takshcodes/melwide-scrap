@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MelWide Scrap | Melbourne Scrap Metal Buyers</title>
-  <meta name="description" content="MelWide Scrap buys scrap metal across Melbourne with free pickups, live pricing, and same-day service from Craigieburn.">
+  <meta name="description" content="MelWide Scrap buys scrap metal across Melbourne with free pickups, fair pricing, and same-day service from Craigieburn.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260630">
+  <link rel="stylesheet" href="styles.css?v=20260701">
 </head>
 <body>
   <header class="site-header">
@@ -17,15 +17,9 @@
         <img class="brand-logo" src="assets/melwide-truck-logo.png" alt="" width="904" height="483">
         <span class="brand-name">MelWide Scrap</span>
       </a>
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
       <div class="nav-links">
         <a class="active" href="index.html">Home</a>
         <a href="services.html">Services</a>
-        <a href="prices.html">Live Prices</a>
         <a href="contact.html">Contact</a>
       </div>
     </nav>
@@ -37,25 +31,18 @@
         <div class="hero-copy reveal">
           <p class="eyebrow">Craigieburn based. Melbourne wide.</p>
           <h1>Melbourne's Most Trusted Scrap Metal Buyers</h1>
-          <p class="hero-subtitle">Free pickups. Live prices. Same-day service. Serving all of Melbourne.</p>
+          <p class="hero-subtitle">Free pickups. Fair pricing. Same-day service. Serving all of Melbourne.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="contact.html">Get a Free Quote</a>
-            <a class="btn btn-secondary" href="prices.html">View Live Prices</a>
+            <a class="btn btn-secondary" href="services.html">View Our Services</a>
           </div>
-          <p class="quote-disclaimer">For the fastest and most accurate quote, please send a photo of your scrap to [PHONE NUMBER] via SMS or WhatsApp. This helps us assess the material type, quantity and condition before we arrive.</p>
+          <p class="quote-disclaimer">For the fastest and most accurate quote, please send a photo of your scrap to +61 483 291 177 via SMS or WhatsApp. This helps us assess the material type, quantity and condition before we arrive.</p>
         </div>
         <div class="hero-art reveal" aria-hidden="true">
           <img class="hero-logo" src="assets/melwide-truck-logo.png" alt="" width="904" height="483">
         </div>
       </div>
       <div class="scroll-cue" aria-hidden="true"></div>
-    </section>
-
-    <section class="metal-ticker" aria-label="Metals MelWide Scrap buys">
-      <div class="ticker-track">
-        <span>Copper</span><span>Brass</span><span>Aluminium</span><span>Lead</span><span>Zinc</span><span>Nickel</span><span>Bronze</span><span>E-Waste</span><span>Scrap Cars</span><span>Batteries</span><span>Solar Panels</span><span>Power Cables</span><span>Electric Motors</span><span>and more</span>
-        <span>Copper</span><span>Brass</span><span>Aluminium</span><span>Lead</span><span>Zinc</span><span>Nickel</span><span>Bronze</span><span>E-Waste</span><span>Scrap Cars</span><span>Batteries</span><span>Solar Panels</span><span>Power Cables</span><span>Electric Motors</span><span>and more</span>
-      </div>
     </section>
 
     <section class="section">
@@ -65,22 +52,22 @@
           <h2>A cleaner standard for scrap metal recycling</h2>
         </div>
         <div class="feature-grid">
-          <article class="feature-card reveal">
+          <article class="feature-card reveal" id="feature-free-pickup">
             <div class="icon pickup-icon" aria-hidden="true"></div>
             <h3>Free Pickup</h3>
             <p>Available for large orders across Melbourne, with simple scheduling and fast turnaround.</p>
           </article>
-          <article class="feature-card reveal">
+          <article class="feature-card reveal" id="feature-fair-pricing">
             <div class="icon pricing-icon" aria-hidden="true"></div>
-            <h3>Live Pricing</h3>
-            <p>Transparent rates, updated regularly, so you know what your metal is worth.</p>
+            <h3>Fair Pricing</h3>
+            <p>We offer some of Melbourne's most competitive rates for scrap metal. Transparent, fair pricing every time — no hidden fees, no lowballing.</p>
           </article>
-          <article class="feature-card reveal">
+          <article class="feature-card reveal" id="feature-same-day">
             <div class="icon service-icon" aria-hidden="true"></div>
             <h3>Same-Day Service</h3>
             <p>Quick quote responses, flexible pickup windows, and practical support when timing matters.</p>
           </article>
-          <article class="feature-card reveal">
+          <article class="feature-card reveal" id="feature-experience">
             <div class="icon experience-icon" aria-hidden="true"></div>
             <h3>5 Years Experience</h3>
             <p>Residential, commercial, industrial, and cleanout work handled with confidence.</p>
@@ -106,7 +93,7 @@
           </a>
           <a class="metal-card reveal" href="services.html">
             <span class="metal-symbol">Br</span>
-            <h3>Brass & Bronze</h3>
+            <h3>Brass &amp; Bronze</h3>
             <p>Clean brass, mixed brass, fittings, and bronze scrap.</p>
           </a>
           <a class="metal-card reveal" href="services.html">
@@ -126,9 +113,74 @@
           </a>
           <a class="metal-card reveal" href="services.html">
             <span class="metal-symbol">Pb</span>
-            <h3>Lead & Zinc</h3>
+            <h3>Lead &amp; Zinc</h3>
             <p>High-value non-ferrous metals quoted clearly.</p>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Carousel -->
+    <section class="reviews-section" aria-label="Customer reviews">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="eyebrow">What Our Customers Say</p>
+          <h2>Trusted by Melbourne locals</h2>
+        </div>
+      </div>
+      <div class="reviews-carousel-wrapper" aria-label="Reviews carousel">
+        <div class="reviews-track">
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"Absolute legends — showed up on time, weighed everything fairly, and paid cash on the spot. Best scrap buyers in Melbourne."</blockquote>
+            <footer><strong>James T.</strong><span>Craigieburn</span></footer>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"Had a heap of old copper wire and aluminium from a reno. MelWide came same day, no hassle. Really competitive rates too."</blockquote>
+            <footer><strong>Sarah M.</strong><span>Epping</span></footer>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"Used them for a full shed cleanout — motors, batteries, car parts. They handled everything professionally and gave a fair price."</blockquote>
+            <footer><strong>Dave K.</strong><span>Broadmeadows</span></footer>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"Quick WhatsApp response, honest quote, and they were at my place within a few hours. Couldn't ask for better service."</blockquote>
+            <footer><strong>Priya R.</strong><span>Roxburgh Park</span></footer>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"As a tradie I deal with scrap regularly. MelWide are my go-to — reliable, transparent pricing, and they always show up when they say they will."</blockquote>
+            <footer><strong>Mark F.</strong><span>Sunbury</span></footer>
+          </article>
+          <!-- Duplicate cards for seamless looping -->
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"Absolute legends — showed up on time, weighed everything fairly, and paid cash on the spot. Best scrap buyers in Melbourne."</blockquote>
+            <footer><strong>James T.</strong><span>Craigieburn</span></footer>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"Had a heap of old copper wire and aluminium from a reno. MelWide came same day, no hassle. Really competitive rates too."</blockquote>
+            <footer><strong>Sarah M.</strong><span>Epping</span></footer>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"Used them for a full shed cleanout — motors, batteries, car parts. They handled everything professionally and gave a fair price."</blockquote>
+            <footer><strong>Dave K.</strong><span>Broadmeadows</span></footer>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"Quick WhatsApp response, honest quote, and they were at my place within a few hours. Couldn't ask for better service."</blockquote>
+            <footer><strong>Priya R.</strong><span>Roxburgh Park</span></footer>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"As a tradie I deal with scrap regularly. MelWide are my go-to — reliable, transparent pricing, and they always show up when they say they will."</blockquote>
+            <footer><strong>Mark F.</strong><span>Sunbury</span></footer>
+          </article>
         </div>
       </div>
     </section>
@@ -138,7 +190,7 @@
         <div>
           <h2>Ready to sell your scrap?</h2>
           <p>Call, message, or book a pickup anywhere in Melbourne.</p>
-          <p class="quote-disclaimer">For the fastest and most accurate quote, please send a photo of your scrap to [PHONE NUMBER] via SMS or WhatsApp. This helps us assess the material type, quantity and condition before we arrive.</p>
+          <p class="quote-disclaimer">For the fastest and most accurate quote, please send a photo of your scrap to +61 483 291 177 via SMS or WhatsApp. This helps us assess the material type, quantity and condition before we arrive.</p>
         </div>
         <a class="btn btn-primary" href="contact.html">Get a Free Quote</a>
       </div>
@@ -148,14 +200,15 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div>
-        <div class="footer-logo">[LOGO]</div>
+        <div class="footer-logo">
+          <img class="footer-logo-img" src="assets/melwide-truck-logo.png" alt="MelWide Scrap" width="904" height="483">
+        </div>
         <p>Melbourne's scrap metal specialists.</p>
       </div>
       <div>
         <h3>Pages</h3>
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
-        <a href="prices.html">Live Prices</a>
         <a href="contact.html">Contact</a>
       </div>
       <div>
@@ -165,12 +218,20 @@
       </div>
       <div>
         <h3>Contact</h3>
-        <p>[PHONE NUMBER]</p>
-        <p>[EMAIL ADDRESS]</p>
+        <p>+61 483 291 177</p>
+        <p>melwidescrap@gmail.com</p>
       </div>
     </div>
-    <div class="footer-bottom">&copy; 2025 MelWide Scrap. All rights reserved.</div>
+    <div class="footer-bottom">&copy; 2026 MelWide Scrap. All rights reserved.</div>
   </footer>
+
+  <!-- Fixed bottom metal ticker -->
+  <div class="metal-ticker-fixed" aria-label="Metals MelWide Scrap buys" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Copper</span><span>Brass</span><span>Aluminium</span><span>Lead</span><span>Zinc</span><span>Nickel</span><span>Bronze</span><span>E-Waste</span><span>Scrap Cars</span><span>Batteries</span><span>Solar Panels</span><span>Power Cables</span><span>Electric Motors</span><span>and more</span>
+      <span>Copper</span><span>Brass</span><span>Aluminium</span><span>Lead</span><span>Zinc</span><span>Nickel</span><span>Bronze</span><span>E-Waste</span><span>Scrap Cars</span><span>Batteries</span><span>Solar Panels</span><span>Power Cables</span><span>Electric Motors</span><span>and more</span>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

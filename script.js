@@ -1,23 +1,7 @@
-const navToggle = document.querySelector(".nav-toggle");
-const navLinks = document.querySelector(".nav-links");
-
-if (navToggle && navLinks) {
-  navToggle.addEventListener("click", () => {
-    const isOpen = navLinks.classList.toggle("open");
-    navToggle.classList.toggle("open", isOpen);
-    navToggle.setAttribute("aria-expanded", String(isOpen));
-    navToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-  });
-
-  navLinks.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("open");
-      navToggle.classList.remove("open");
-      navToggle.setAttribute("aria-expanded", "false");
-      navToggle.setAttribute("aria-label", "Open menu");
-    });
-  });
-}
+// ==========================================
+// MOBILE NAV — hamburger removed, nav is always flat-visible.
+// Nav toggle logic is no longer needed.
+// ==========================================
 
 document.querySelectorAll("[data-custom-select]").forEach((select) => {
   const trigger = select.querySelector(".select-trigger");
@@ -177,6 +161,10 @@ document.querySelectorAll("[data-photo-upload]").forEach((upload) => {
   render();
 });
 
+// ==========================================
+// REVEAL ON SCROLL
+// ==========================================
+
 const revealItems = document.querySelectorAll(".reveal");
 
 if ("IntersectionObserver" in window) {
@@ -196,3 +184,65 @@ if ("IntersectionObserver" in window) {
 } else {
   revealItems.forEach((item) => item.classList.add("visible"));
 }
+
+// ==========================================
+// FEATURE CARD SEQUENTIAL GLOW ANIMATION
+// Triggers once when the feature grid scrolls into view,
+// then loops continuously: card 1 → 2 → 3 → 4 → repeat.
+// Each card glows for 2s with a short crossfade transition.
+// ==========================================
+
+(function initFeatureGlow() {
+  const cardIds = [
+    "feature-free-pickup",
+    "feature-fair-pricing",
+    "feature-same-day",
+    "feature-experience",
+  ];
+
+  const cards = cardIds.map((id) => document.getElementById(id)).filter(Boolean);
+  if (!cards.length) return;
+
+  const GLOW_DURATION = 2000;   // ms each card glows
+  const FADE_INTERVAL = 200;    // ms gap between cards
+
+  let currentIndex = 0;
+  let loopTimer = null;
+  let hasStarted = false;
+
+  function glowNext() {
+    // Remove glow from all cards
+    cards.forEach((c) => {
+      c.classList.remove("glow-active");
+      // Force reflow to re-trigger CSS animation on the next add
+      void c.offsetWidth;
+    });
+
+    const card = cards[currentIndex];
+    card.classList.add("glow-active");
+
+    currentIndex = (currentIndex + 1) % cards.length;
+    loopTimer = setTimeout(glowNext, GLOW_DURATION + FADE_INTERVAL);
+  }
+
+  if ("IntersectionObserver" in window) {
+    const glowObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasStarted) {
+            hasStarted = true;
+            glowNext();
+            glowObserver.disconnect();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    // Observe the first card — when it's visible we start the sequence
+    glowObserver.observe(cards[0]);
+  } else {
+    // Fallback: start immediately
+    glowNext();
+  }
+})();
